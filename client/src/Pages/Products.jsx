@@ -13,7 +13,7 @@ const Products = () => {
                 console.log(data.product);
                 setProduct(data.product);
             } catch (error) {
-                console.log(error);
+                console.log(error.response?.data?.message || error);
                 
             }
         }
@@ -33,7 +33,7 @@ const Products = () => {
           setCartItems(res.data);
         } catch (error) {
           console.log(error?.data?.message);
-          toast.error(error?.data?.message)
+          toast.error(error.response?.data?.message || error?.data?.message)
         }
       }
     return (

@@ -52,7 +52,7 @@ const Wishlist = ({cartitems, setCartItems}) => {
             
           } catch (error) {
             console.log(error.data?.message);
-            toast.error("Failed to load wishlist");
+            toast.error(error.response?.data?.message || "Failed to load wishlist");
           }
         };
         fetchwishlist();
@@ -74,7 +74,7 @@ const Wishlist = ({cartitems, setCartItems}) => {
         
         } catch (error) {
           if(error){
-            toast.error(error?.data?.message);
+            toast.error(error.response?.data?.message || error?.data?.message);
             console.log(error?.data?.message);
           }
           

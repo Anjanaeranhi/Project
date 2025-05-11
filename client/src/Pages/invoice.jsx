@@ -27,11 +27,11 @@ const Invoice = () => {
           await api.put(`/updatecart/${userId}`, { orderedProductIds })
           
         } else {
-          toast.error("No orders found!");
+          toast.error(error.response?.data?.message || "No orders found!");
         }
       } catch (error) {
         console.error(error);
-        toast.error(error.message);
+        toast.error(error.response?.data?.message || error.message);
       }
     };
 

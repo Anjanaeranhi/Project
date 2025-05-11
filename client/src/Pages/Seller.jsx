@@ -1,6 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { FaBars } from 'react-icons/fa';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import {  sellerapi } from '../axios';
 import { useFormik } from 'formik';
 import * as Yup from "yup";

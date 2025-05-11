@@ -27,7 +27,7 @@ const UserProfile = () => {
                 
                 setFormData({ name: data.name, email: data.email });
             } catch (error) {
-                toast.error(error.message);
+                toast.error(error.response?.data?.message || error.message);
             }
         };
         fetchuser();
@@ -57,7 +57,7 @@ const UserProfile = () => {
             setuser(data);
             setIsEditing(false);
         } catch (error) {
-            toast.error("Failed to update profile");
+            toast.error(error.response?.data?.message || "Failed to update profile");
         }
     };
 

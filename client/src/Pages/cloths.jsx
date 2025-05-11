@@ -252,7 +252,7 @@ const Cloths = ({ cartitems, setCartItems }) => {
                 <div className="card-body text-center">
                   <h5 className="card-title">{product.name}</h5>
                   <p className="card-text text-muted">
-                    Price: <strong>${product.price}</strong>
+                    Price: <strong>₹{product.price}</strong>
                   </p>
 
                   {!product.disabled && (

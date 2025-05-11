@@ -26,7 +26,7 @@ const Checkout = () => {
         const totalAmount = cartRes.data.reduce((acc, item) => acc + item.price * item.quantity, 0);
         setTotal(totalAmount);
       } catch (err) {
-        toast.error("Error fetching checkout data");
+        toast.error(error.response?.data?.message ||"Error fetching checkout data");
       }
     };
 
@@ -81,7 +81,7 @@ const Checkout = () => {
         }
       } catch (error) {
         console.error(error);
-        toast.error("Payment failed");
+        toast.error(error.response?.data?.message ||"Payment failed");
       }
        
     }

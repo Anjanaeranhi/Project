@@ -16,7 +16,7 @@ const Paintingcarousel = () => {
                 const { data } = await api.get("/products");
                 setProducts(data.product);
             } catch (error) {
-                toast.error(error.message );
+                toast.error(error.response?.data?.message);
             }
         };
 

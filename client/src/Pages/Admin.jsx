@@ -33,7 +33,7 @@ const Admin = () => {
 
       toast.success("User status updated");
     } catch (error) {
-      toast.error("Failed to update user status");
+      toast.error(error.response?.data?.message ||"Failed to update user status");
     }
   };
   const handleViewUser = (user) => {
@@ -51,7 +51,7 @@ const Admin = () => {
       );
       toast.success("Seller status updated");
     } catch (error) {
-      toast.error("Failed to update seller status");
+      toast.error(error.response?.data?.message ||"Failed to update seller status");
     }
   };
   
@@ -67,7 +67,7 @@ const Admin = () => {
       );
       toast.success("Product status updated");
     } catch (error) {
-      toast.error("Failed to update product status");
+      toast.error(error.response?.data?.message || "Failed to update product status");
     }
   };
   
@@ -132,7 +132,7 @@ const Admin = () => {
         const { data } = await api.get("/products");
         setProduct(data.product || []);
       } catch (error) {
-        toast.error("Error fetching products");
+        toast.error(error.response?.data?.message ||"Error fetching products");
       }
     };
     fetchProduct();

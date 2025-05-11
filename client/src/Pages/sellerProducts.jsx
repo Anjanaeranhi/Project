@@ -24,7 +24,7 @@ const SellerProducts = () => {
         
         setProducts(res.data.products);
       } catch (err) {
-        console.error('Error fetching products:', err);
+        console.error(err.response?.data?.message || 'Error fetching products:', err);
       }
     };
     fetchProducts();
@@ -40,7 +40,7 @@ const SellerProducts = () => {
         toast.success("Product deleted successfully");
     } catch (error) {
         console.log(error);
-        toast.error(error.message);
+        toast.error(error.response?.data?.message || error.message);
     }
  }
   return (

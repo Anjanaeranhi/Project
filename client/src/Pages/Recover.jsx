@@ -23,7 +23,7 @@ const Recover = () => {
             toast.success(res.data.message);
             goToHome()
         } catch (error) {
-            console.log(error);
+            console.log(error.response?.data?.message || error);
             setLoad(false)
         }
     }
